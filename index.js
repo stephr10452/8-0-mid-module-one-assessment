@@ -1,3 +1,5 @@
+const { TestWatcher } = require("jest");
+
 /*
   You may use the following animals array to test your functions inside of this file. This is the same array of animals that is used in the tests.
   
@@ -26,7 +28,14 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
+function getTotalCount(animals) {
+  let total = 0;
+  for(i=0;i<animals.length;i++){
+       total += animals[i].count ;
+  }
+
+  return total;
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -40,7 +49,20 @@ function getTotalCount(animals) {}
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+  let animalArr = [];
+  for(i=0;i<animals.length;i++){
+    animalArr.push(animals[i].kind)
+    }
+     return animalArr
+     }
+    
+    
+    
+  
+
+
+ 
 
 /**
  * FUNCTION DESCRIPTION
@@ -59,7 +81,17 @@ function getAllKinds(animals) {}
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+  let miniArr = [];
+  for(i=0;i<animals.length;i++){
+    if (animals[i].count >= minimum){
+       miniArr.push(animals[i]) 
+    }
+
+  }
+
+  return miniArr
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -73,7 +105,18 @@ function filterByCountMinimum(animals, minimum) {}
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+  let highCount = {};
+  let minimum = 0;
+   for(i=0;i<animals.length;i++){
+     if(animals[i].count > minimum){
+       highCount.animals
+     }
+
+   }
+
+  return highCount
+}
 
 // Do not change anything below this line.
 module.exports = {
